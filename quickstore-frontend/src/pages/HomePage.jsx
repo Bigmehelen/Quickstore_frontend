@@ -1,7 +1,8 @@
 import { useState, useMemo } from 'react';
 import { useGetProductsQuery } from '../api/api';
-import { categories as staticCategories } from '../data/products';
 import ProductCard from '../components/ProductCard';
+
+const CATEGORIES = ['All', 'Electronics', 'Fashion', 'Home & Living', 'Sports', 'Beauty'];
 
 export default function HomePage() {
   const { data: products = [], isLoading, isError } = useGetProductsQuery();
@@ -35,7 +36,7 @@ export default function HomePage() {
       {/* Hero Banner */}
       <section className="hero-banner">
         <div className="hero-content">
-          <div className="hero-tag">🔥 Flash Sale — Up to 30% off</div>
+          <div className="hero-tag"> Flash Sale — Up to 30% off</div>
           <h1 className="hero-title">
             Shop Smarter,<br />
             <span className="gradient-text">Live Better</span>
@@ -94,7 +95,7 @@ export default function HomePage() {
       <section className="catalog-section">
         <div className="catalog-header">
           <div className="category-tabs">
-            {staticCategories.map(cat => (
+            {CATEGORIES.map(cat => (
               <button
                 key={cat}
                 className={`cat-tab ${activeCategory === cat ? 'active' : ''}`}
