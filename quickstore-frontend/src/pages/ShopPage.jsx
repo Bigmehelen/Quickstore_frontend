@@ -4,7 +4,7 @@ import ProductCard from '../components/ProductCard';
 
 const CATEGORIES = ['All', 'Electronics', 'Fashion', 'Home & Living', 'Sports', 'Beauty'];
 
-export default function HomePage() {
+export default function ShopPage() {
   const { data: products = [], isLoading, isError } = useGetProductsQuery();
   const [activeCategory, setActiveCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
@@ -26,10 +26,6 @@ export default function HomePage() {
     else if (sortBy === 'rating') list.sort((a, b) => b.rating - a.rating);
     return list;
   }, [products, activeCategory, searchQuery, sortBy]);
-
-  if (isLoading) return <div className="page"><div className="empty-state"><span className="spinner" /><h3>Loading products...</h3></div></div>;
-  if (isError) return <div className="page"><div className="empty-state"><span>⚠️</span><h3>Error loading products</h3><p>Could not connect to the backend API.</p></div></div>;
-
 
   return (
     <div className="page home-page">
@@ -91,7 +87,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Category Tabs */}
+      {/* Product Catalog */}
       <section className="catalog-section">
         <div className="catalog-header">
           <div className="category-tabs">
@@ -119,7 +115,18 @@ export default function HomePage() {
           </select>
         </div>
 
-        {filtered.length === 0 ? (
+        {isLoading ? (
+          <div className="empty-state">
+            <span className="spinner" />
+            <h3>Loading products...</h3>
+          </div>
+        ) : isError ? (
+          <div className="empty-state">
+            <span>⚠️</span>
+            <h3>Error loading products</h3>
+            <p>Could not connect to the backend API.</p>
+          </div>
+        ) : filtered.length === 0 ? (
           <div className="empty-state">
             <span>🔍</span>
             <h3>No products found</h3>

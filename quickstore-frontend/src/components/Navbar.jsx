@@ -75,8 +75,7 @@ export default function Navbar() {
           </div>
         ) : (
           <div className="auth-links">
-            <Link to="/login" className="btn-ghost" id="nav-login-btn">Login</Link>
-            <Link to="/register" className="btn-primary" id="nav-register-btn">Sign Up</Link>
+            <Link to="/register" className="btn-primary" id="nav-register-btn">Create Account</Link>
           </div>
         )}
       </div>

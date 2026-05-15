@@ -5,7 +5,7 @@ import { CartProvider } from './contexts/CartContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import HomePage from './pages/HomePage';
+import ShopPage from './pages/ShopPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import CartPage from './pages/CartPage';
 import LoginPage from './pages/LoginPage';
@@ -21,14 +21,12 @@ export default function App() {
             <Navbar />
             <main className="app-main">
               <Routes>
-                {/* Guest-accessible routes */}
-                <Route path="/" element={<HomePage />} />
+                <Route path="/" element={<ShopPage />} />
                 <Route path="/product/:id" element={<ProductDetailPage />} />
                 <Route path="/cart" element={<CartPage />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/register" element={<RegisterPage />} />
 
-                {/* 🔴 Auth-gated checkout */}
                 <Route
                   path="/checkout"
                   element={
@@ -38,7 +36,6 @@ export default function App() {
                   }
                 />
 
-                {/* 404 fallback */}
                 <Route
                   path="*"
                   element={

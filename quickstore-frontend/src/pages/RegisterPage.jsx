@@ -94,7 +94,7 @@ export default function RegisterPage() {
               id="reg-password"
               name="password"
               type="password"
-              placeholder="Min. 6 characters"
+              placeholder="••••••••"
               value={form.password}
               onChange={handleChange}
               autoComplete="new-password"
@@ -106,7 +106,7 @@ export default function RegisterPage() {
               id="reg-confirm"
               name="confirm"
               type="password"
-              placeholder="Repeat password"
+              placeholder="••••••••"
               value={form.confirm}
               onChange={handleChange}
               autoComplete="new-password"
