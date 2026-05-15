@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { useGetProductsQuery } from '../api/api';
+import { useGetProductsQuery } from '../api/publicApi';
 import ProductCard from '../components/ProductCard';
 
 const CATEGORIES = ['All', 'Electronics', 'Fashion', 'Home & Living', 'Sports', 'Beauty'];

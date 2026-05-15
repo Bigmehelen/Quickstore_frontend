@@ -1,7 +1,7 @@
 import { createContext, useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCredentials, logout as logoutAction, selectCurrentUser, selectIsAuthenticated } from '../apislice/auth/authSlice';
-import { useLoginMutation, useRegisterMutation } from '../api/api';
+import { useLoginMutation, useRegisterMutation } from '../api/privateApi';
 
 const AuthContext = createContext(null);
 

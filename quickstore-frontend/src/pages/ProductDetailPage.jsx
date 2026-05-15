@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { useGetProductQuery, useGetProductsQuery } from '../api/api';
+import { useGetProductQuery, useGetProductsQuery } from '../api/publicApi';
 import { useCart } from '../contexts/CartContext';
 import { getImageUrl } from '../utils/image';
 

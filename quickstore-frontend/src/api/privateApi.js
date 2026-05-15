@@ -1,11 +1,9 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-export const API_BASE_URL = 'https://api.quickstore.com';
-
-export const apiSlice = createApi({
-  reducerPath: 'api',
+export const privateApi = createApi({
+  reducerPath: 'privateApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: API_BASE_URL,
+    baseUrl: import.meta.env.VITE_API_BASE_URL,
     prepareHeaders: (headers, { getState }) => {
       const token = getState().auth.token;
       if (token) {
@@ -14,9 +12,8 @@ export const apiSlice = createApi({
       return headers;
     },
   }),
-  tagTypes: ['Product', 'User', 'Cart'],
+  tagTypes: ['User', 'Cart', 'Order'],
   endpoints: (builder) => ({
-    // Placeholder endpoints for RTK Query
     login: builder.mutation({
       query: (credentials) => ({
         url: '/auth/login',
@@ -31,20 +28,10 @@ export const apiSlice = createApi({
         body: userData,
       }),
     }),
-    getProducts: builder.query({
-      query: () => '/products',
-      providesTags: ['Product'],
-    }),
-    getProduct: builder.query({
-      query: (id) => `/products/${id}`,
-      providesTags: (result, error, id) => [{ type: 'Product', id }],
-    }),
   }),
 });
 
-export const { 
-  useLoginMutation, 
-  useRegisterMutation, 
-  useGetProductsQuery,
-  useGetProductQuery 
-} = apiSlice;
+export const {
+  useLoginMutation,
+  useRegisterMutation,
+} = privateApi;
