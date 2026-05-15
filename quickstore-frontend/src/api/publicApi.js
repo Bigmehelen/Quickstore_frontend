@@ -1,7 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-// Public API — no authentication required.
-// Used for browsing products without a token.
 export const publicApi = createApi({
   reducerPath: 'publicApi',
   baseQuery: fetchBaseQuery({

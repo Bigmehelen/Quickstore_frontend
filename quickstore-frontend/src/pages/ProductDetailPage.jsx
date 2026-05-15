@@ -53,7 +53,7 @@ export default function ProductDetailPage() {
       </button>
 
       <div className="product-detail-grid">
-        {/* Images */}
+
         <div className="product-images">
           <img
             src={getImageUrl(product.images[selectedImg])}
@@ -74,7 +74,7 @@ export default function ProductDetailPage() {
           </div>
         </div>
 
-        {/* Info */}
+
         <div className="product-detail-info">
           <p className="detail-category">{product.category}</p>
           <h1 className="detail-name">{product.name}</h1>
@@ -152,7 +152,7 @@ export default function ProductDetailPage() {
         </div>
       </div>
 
-      {/* Related products */}
+
       {related.length > 0 && (
         <section className="related-section">
           <h2>You might also like</h2>

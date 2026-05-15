@@ -76,7 +76,6 @@ export default function CartPage() {
           ))}
         </div>
 
-        {/* Order Summary */}
         <div className="order-summary">
           <h2>Order Summary</h2>
 
@@ -105,7 +104,6 @@ export default function CartPage() {
             </div>
           </div>
 
-          {/* 🔴 Checkout triggers auth check via ProtectedRoute */}
           <button
             className="btn-primary btn-lg checkout-btn"
             onClick={() => navigate('/checkout')}

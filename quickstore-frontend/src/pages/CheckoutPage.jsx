@@ -79,7 +79,7 @@ export default function CheckoutPage() {
 
   return (
     <div className="page checkout-page">
-      {/* Stepper */}
+
       <div className="stepper">
         {STEPS.map((s, i) => (
           <div key={s} className={`step ${i === step ? 'active' : ''} ${i < step ? 'done' : ''}`}>
@@ -93,7 +93,6 @@ export default function CheckoutPage() {
       <div className="checkout-layout">
         <div className="checkout-main">
 
-          {/* Step 0 — Cart Review */}
           {step === 0 && (
             <div className="checkout-step" id="step-review">
               <h2>Review Your Order</h2>
@@ -113,7 +112,7 @@ export default function CheckoutPage() {
             </div>
           )}
 
-          {/* Step 1 — Shipping */}
+
           {step === 1 && (
             <div className="checkout-step" id="step-shipping">
               <h2>Shipping Details</h2>
@@ -205,7 +204,7 @@ export default function CheckoutPage() {
             </div>
           )}
 
-          {/* Step 2 — Payment */}
+
           {step === 2 && (
             <div className="checkout-step" id="step-payment">
               <h2>Payment Details</h2>
@@ -276,7 +275,7 @@ export default function CheckoutPage() {
             </div>
           )}
 
-          {/* Step 3 — Confirmation */}
+
           {step === 3 && (
             <div className="checkout-step confirmation" id="step-confirmation">
               <div className="confirm-icon">🎉</div>
@@ -292,8 +291,7 @@ export default function CheckoutPage() {
             </div>
           )}
         </div>
-
-        {/* Sidebar Summary */}
+        
         {step < 3 && (
           <div className="checkout-sidebar">
             <h3>Order Summary</h3>

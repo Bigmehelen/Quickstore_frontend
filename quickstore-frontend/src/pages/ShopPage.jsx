@@ -29,7 +29,7 @@ export default function ShopPage() {
 
   return (
     <div className="page home-page">
-      {/* Hero Banner */}
+
       <section className="hero-banner">
         <div className="hero-content">
           <div className="hero-tag"> Flash Sale — Up to 30% off</div>
@@ -87,7 +87,7 @@ export default function ShopPage() {
         </div>
       </section>
 
-      {/* Product Catalog */}
+
       <section className="catalog-section">
         <div className="catalog-header">
           <div className="category-tabs">
